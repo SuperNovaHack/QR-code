@@ -1,0 +1,22 @@
+{
+  "canisters": {
+    "demo": {
+      "main": "app/Demo.mo"
+    },
+    "format": {
+      "main": "test/Format.mo"
+    },
+    "galois": {
+      "main": "test/Galois.mo"
+    },
+    "qr": {
+      "main": "app/Main.mo"
+    },
+    "test": {
+      "main": "test/Main.mo"
+    },
+    "version": {
+      "main": "test/Version.mo"
+    }
+  }
+}

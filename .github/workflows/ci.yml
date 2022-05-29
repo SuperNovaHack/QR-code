@@ -1,0 +1,20 @@
+name: "build"
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: "Install DFINITY Canister SDK"
+        run: |
+          pushd /tmp
+          wget -O install-dfx.sh https://sdk.dfinity.org/install.sh
+          yes Y | DFX_VERSION=0.6.24 bash install-dfx.sh
+          echo "/home/runner/bin" >> $GITHUB_PATH
+          popd
+      - name: "Run"
+        run: ./run.sh
